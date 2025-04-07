@@ -25,7 +25,7 @@ def main():
     # Add logo at top right
     header_left, header_right = st.columns([10, 1])
     with header_right:
-        st.image(r"C:\Users\HP\Desktop\vs\steamlit_Stock_Ui\images.jpg", width=400)
+        st.image(r"C:\Users\HP\Desktop\vs\steamlit_Stock_images.jpg", width=400)
         # st.markdown("<p style='text-align: right; color: gray; font-size: 0.8em;'>© 2024 Neoquant Solutions Pvt Ltd.</p>", unsafe_allow_html=True)
     
     # Initialize session state variables if they don't exist
