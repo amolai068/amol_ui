@@ -22,6 +22,12 @@ def generate_stock_recommendations():
 def main():
     st.set_page_config(layout="wide", page_title="Trading Algorithm Platform")
     
+    # Add logo at top right
+    header_left, header_right = st.columns([10, 1])
+    with header_right:
+        st.image(r"C:\Users\HP\Desktop\vs\steamlit_Stock_Ui\images.jpg", width=400)
+        # st.markdown("<p style='text-align: right; color: gray; font-size: 0.8em;'>© 2024 Neoquant Solutions Pvt Ltd.</p>", unsafe_allow_html=True)
+    
     # Initialize session state variables if they don't exist
     if 'algo_started' not in st.session_state:
         st.session_state.algo_started = False
@@ -78,6 +84,13 @@ def main():
     if st.session_state.logged_in:
         # Main trading interface in columns
         left_col, right_col= st.columns([1, 1])
+        
+        # Add footer at the bottom
+        st.markdown("<br><hr>", unsafe_allow_html=True)  # Add some spacing
+        st.markdown(
+            "<p style='text-align: center; color: gray; font-size: 0.8em;'>© 2024 All rights reserved. Neoquant Solutions Pvt Ltd.</p>",
+            unsafe_allow_html=True
+        )
         
         # Left column - Trading Types
         with left_col:
@@ -320,6 +333,9 @@ def main():
                             st.metric("Total P&L", f"₹{total_pnl:,.2f}", delta=total_pnl)
                 else:
                     st.info("Run the algorithm to get recommendations")
-
+                    
 if __name__ == "__main__":
     main()
+
+
+
